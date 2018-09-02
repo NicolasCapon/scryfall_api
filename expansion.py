@@ -41,7 +41,3 @@ def get_expansion(expansion_code):
     if not expansion_code: return None
     url = config.base_url + "/sets/{}".format(expansion_code)
     return get_content(url)
-
-
-if __name__ == "__main__":
-    print([s["name"] for s in get_future_expansions()])

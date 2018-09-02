@@ -43,6 +43,7 @@ def get_named_card(name, set_code="", fuzzy=True):
 
 
 def get_random_card():
+    """Get random card. Include duplicates (basic lands for example), cards like Planes..."""
     url = config.base_url + "/cards/random"
     content = get_content(url)
     if not content.get("object", "error") == "error": 
@@ -78,6 +79,3 @@ def search_cards(**kwarg):
 
     return content.get("data", None)
 
-
-if __name__ == "__main__":
-    print(get_card_names(get_named_card(name="ancestral recall", fuzzy=False)))
